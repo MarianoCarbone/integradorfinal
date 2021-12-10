@@ -1,3 +1,19 @@
+<?php
+
+include 'conexion.php';
+
+
+$consultas=mysqli_query($conexion, "SELECT*FROM registros");
+
+
+
+
+?>
+
+
+
+
+
 <!doctype html>
 <html lang="es">
 
@@ -8,7 +24,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link href="estilo2.css" rel="stylesheet">
+    <link href="estilo4.css" rel="stylesheet">
     <title>Formulario de registros</title>
 </head>
 
@@ -49,45 +65,49 @@
         </div>
       </div>
 
-    <div class="d-flex justify-content-center">
-        <div class="col-sm-6  ">
+  
 
+           
+
+  <div class="row">
+          <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+            
+
+            <table  class="table table-success table-striped table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
                   <?php
+                          while ($tabla=mysqli_fetch_array($consultas)){?>
 
-                  include 'conexion.php';
 
-                      echo "<br>";
-                      echo "<br>";
-                      echo "<br>";
+                            <tr>
+                              <td><?php echo $tabla['id_usuario'];?></td>
+                            
+                              <td><?php echo $tabla['nombre'];?></td>
+                          
+                              <td><?php echo $tabla['apellido'];?></td>
 
-                      $consultastodos="SELECT * FROM registros";
-                      
-                      $consultas=mysqli_query($conexion, $consultastodos);
-                    
-                      while($listadoArray=mysqli_fetch_array($consultas))
-                      {
-                          echo $listadoArray['id_usuario'];
-                          echo " | ";
-                          echo $listadoArray['nombre'];
-                          echo " | ";
-                          echo $listadoArray['apellido'];
-                          echo " | ";
-                          echo " | ";
-                          echo $listadoArray['dni'];
-                          echo " | ";
-                          echo $listadoArray['email'];
-                          echo"<br>";
+                              <td><?php echo $tabla['email'];?></td>
+                            </tr>
+                            
+                            <?php }?>        
+              </tbody>
+            </table>
 
-                      }
-                      mysqli_close($conexion);
-                  ?>
-                  <form action="index.php">
-                            <div class="col-md-6 col-sm-6 col-lg-6 p-1">
-                                <button class="btn btn-success w-100" type="submit"> Volver a inicio </button>
-                            </div>
-                  </form>
-        </div>
-    </div>
+      
+
+          </div>
+  </div>
+
 
             <footer>
 

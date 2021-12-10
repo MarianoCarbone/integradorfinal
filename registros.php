@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link href="estilo2.css" rel="stylesheet">
+    <link href="estilo3.css" rel="stylesheet">
     <title>Formulario de registros</title>
 </head>
 
@@ -50,7 +50,7 @@
       </div>
     <div class="d-flex justify-content-center">
         <div class="col-sm-6  ">
-            <form action="insertar.php" class="row g-3 m-0 p-0" method="POST">
+            <form action="insertar.php" class="row g-3 m-5 p-2" method="POST">
                 <!--nombre y apellido-->
                 <div class="col-md-6 col-sm-6 col-lg-6 p-1">
                     <input type="text" class="form-control" placeholder="Nombre" name=nombre>
@@ -86,9 +86,9 @@
             </form>
           </div>
         </div>
-
+        
             <footer>
-
+                
                 <div class="d-flex justify-content-center">
                   <div class="foot">
               
@@ -121,8 +121,10 @@
                     </div>
               
                   </div>
-                </div> 
+                </div>
+                 
               </footer>
-</body>
+              
+            </body>
 
 </html>
